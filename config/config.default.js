@@ -22,8 +22,7 @@ module.exports = appInfo => {
 		},
 	};
 
-
-
+	
 
 	//——————————数据库连接
 	config.mysql = {

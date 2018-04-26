@@ -22,8 +22,7 @@ module.exports = appInfo => {
 		},
 	};
 
-
-	console.log('dsadas')
+	
 
 	//——————————数据库连接
 	config.mysql = {

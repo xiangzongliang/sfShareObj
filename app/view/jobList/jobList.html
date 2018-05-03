@@ -16,7 +16,7 @@
 
 <!--内容区域-->
 {% block content %}
-
+<link rel="stylesheet" href="/public/css/jobList.css"/>
 <div class="layui-body">
     <div style="padding: 20px">
 
@@ -33,6 +33,56 @@
 
 
 
+
+
+<!--查看弹出层显示的内容-->
+<div class="viewPopupContent" style="display: none">
+    <div class="title"><img class="icon-unfavourite" src="./public/icon/unfavourite.png" alt=""><a class="postName"></a></div>
+
+    <div class="layui-row jobInfo">
+        <div class="layui-col-md4">
+            <a>工作地点 :</a>
+            <span class="workingPlace"></span>
+        </div>
+        <div class="layui-col-md4">
+            <a>招聘人数 :</a>
+            <span class="needPeople"></span>
+        </div>
+        <div class="layui-col-md4">
+            <a>有效时间 :</a>
+            <span class="validityTime"></span>
+        </div>
+    </div>
+    <div class="layui-row jobInfo">
+        <div class="layui-col-md4">
+            <a>学历 :</a>
+            <span class="education"></span>
+        </div>
+        <div class="layui-col-md4">
+            <a>工作经验 :</a>
+            <span class="experience"></span>
+        </div>
+        <div class="layui-col-md4">
+            <a>薪资范围 :</a>
+            <span class="salary"></span>
+        </div>
+    </div>
+    <div class="layui-row jobInfo">
+        <div class="layui-col-md4">
+            <a>部门 :</a>
+            <span class="department"></span>
+        </div>
+        <div class="layui-col-md4">
+            <a>紧急状态 :</a>
+            <span class="urgent"></span>
+        </div>
+    </div>
+
+    <p class="jobDutyTit">工作职责 : </p>
+    <div class="jobDuty"></div>
+    <p class="jobRequirementTit">岗位要求 :</p>
+    <div class="jobRequirement"></div>
+</div>
 
 
 <script type="text/html" id="barDemo">

@@ -1,0 +1,133 @@
+
+<!--继承模板内容-->
+{% extends "../header/header.html" %}
+
+
+
+
+
+<!--title-->
+{% block title %}{{ title }}{% endblock %}
+
+
+
+
+
+
+<!--内容区域-->
+{% block content %}
+
+<div class="layui-body">
+    <div style="padding: 20px">
+        <div class="layui-form">
+
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">职位名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ postName }}" placeholder="请输入职位名称" autocomplete="off" class="layui-input postName">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">工作地点</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ workingPlace }}" placeholder="请输入工作地点" autocomplete="off" class="layui-input workingPlace">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">需要人数</label>
+                        <div class="layui-input-block">
+                            <input type="number" value="{{ needPeople }}" placeholder="需要人数" autocomplete="off" class="layui-input needPeople">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">有效时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ validityTime }}" placeholder="有效时间" autocomplete="off" class="layui-input validityTime">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+
+                        <label class="layui-form-label">学历</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ education }}" placeholder="学历" autocomplete="off" class="layui-input education">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">工作经验</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="工作经验" autocomplete="off"  value="{{ experience }}" class="layui-input experience">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">年</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">薪资范围</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ salary }}" placeholder="薪资范围" autocomplete="off" class="layui-input salary">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">发布部门</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{{ department }}" placeholder="发布部门" autocomplete="off" class="layui-input department">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">优先招聘</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="优先招聘" autocomplete="off"  value="{{ urgent }}" class="layui-input urgent">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">0-10之间,10优先最高</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">工作职责</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="工作职责" class="layui-textarea jobDuty">{{ jobDuty }}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">岗位要求</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="岗位要求" class="layui-textarea jobRequirement">{{ jobRequirement }}</textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn saveJob">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/editJob.js"></script>
+{% endblock %}
+

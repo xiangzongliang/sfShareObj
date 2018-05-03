@@ -1,0 +1,36 @@
+.title{
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+.postName{
+    font-size: 24px;
+    color: #555555;
+    line-height: 35px;
+}
+.jobInfo{
+    padding: 8px 0px;
+    border-bottom: 1px solid #ececec;
+}
+.jobInfo a{
+    color: #5c5c5c;
+    padding-right: 10px;
+}
+.jobInfo span{
+    color: #787878;
+}
+.icon-unfavourite{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+.jobDutyTit,.jobRequirementTit{
+    padding: 45px 0px 20px 0px;
+    font-size: 18px;
+    color: #289dc3;
+    letter-spacing:1px;
+    font-weight: 500;
+}
+.jobDuty,.jobRequirement{
+    color: #787878;
+    text-align: justify;
+}

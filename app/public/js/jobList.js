@@ -5,7 +5,7 @@ layui.use(['element','jquery','table'], function(element,$){
 
 
 
-
+	$('.jobList').addClass('layui-this')
 	var page = {
 
 		//入口
@@ -50,18 +50,82 @@ layui.use(['element','jquery','table'], function(element,$){
 			//监听工具条
 			table.on('tool(jobTable)', function(obj){
 				var data = obj.data;
+				console.log(data.id);
 				if(obj.event === 'detail'){
-					layer.msg('ID：'+ data.id + ' 的查看操作');
+					page.viewJob(data.id);
 				} else if(obj.event === 'del'){
-					layer.confirm('真的删除行么', function(index){
-						obj.del();
+					layer.confirm('真的删除当前招聘？', function(index){
+						page.delJob(data.id)
 						layer.close(index);
 					});
 				} else if(obj.event === 'edit'){
-					layer.alert('编辑行：<br>'+ JSON.stringify(data))
+					page.editJob(data.id)
 				}
 			});
+		},
+
+
+
+
+		//查看招聘信息
+		viewJob:function (id) {
+			$.ajax({
+				url:'/jobDetailed',
+				type:'POST',
+				dataType:'json',
+				data:{id:id},
+				success:function (data) {
+					var msg = data.msg[0]
+					layer.open({
+						title:msg.postName,
+						area: ['650px', window.screen.availHeight*0.9+'px'],
+						shade: [1, '#fff'],
+						btn: [],
+						id:'viewPopup',
+						anim:2,
+						content: $('.viewPopupContent').html(),
+						success:function () {
+							$('#viewPopup .postName').html(msg.postName)
+							$('#viewPopup .workingPlace').html(msg.workingPlace)
+							$('#viewPopup .needPeople').html(msg.needPeople)
+							$('#viewPopup .validityTime').html(msg.validityTime)
+							$('#viewPopup .education').html(msg.education)
+							$('#viewPopup .experience').html(msg.experience+'年')
+							$('#viewPopup .salary').html(msg.salary)
+							$('#viewPopup .department').html(msg.department)
+							$('#viewPopup .urgent').html(msg.urgent)
+
+
+							//  注：下面两行要使用原生JS写，否则内容区域无法自动换行
+							document.getElementById('viewPopup').getElementsByClassName('jobDuty')[0].innerText = msg.jobDuty
+							document.getElementById('viewPopup').getElementsByClassName('jobRequirement')[0].innerText = msg.jobRequirement
+							// $('#viewPopup .jobDuty').text(msg.jobDuty)
+							// $('#viewPopup .jobRequirement').text(msg.jobRequirement)
+						}
+					});
+				}
+			})
+		},
+
+		//编辑招聘
+		editJob:function (id) {
+			window.location.href = './editJob?id='+id
+		},
+		//删除招聘
+		delJob:function (id) {
+			$.ajax({
+				url:'/deleteJob',
+				type:'POST',
+				dataType:'json',
+				data:{id:id},
+				success:function (data) {
+					layer.msg(data.msg);
+				}
+			})
 		}
+
+
+
 	}
 
 

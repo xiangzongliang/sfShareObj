@@ -17,20 +17,21 @@ module.exports = appInfo => {
 	config.cluster = {
 		listen: {
 			//path: '',
-			port:8009,
+			port:8002,
 			//hostname: '',
 		},
 	};
 
-	
+
+
 
 	//——————————数据库连接
 	config.mysql = {
 		client: {
 			host: 'localhost',
 			port: '3306',
-			user: 'xiangzongliang',
-			password: 'xiang0612liang327411',
+			user: 'root', //user sfTeam
+			password: 'root',  //psd  !123456ASDzxc
 			database: 'sf_innovativeapplication',
 		},
 		app: true,  // 是否加载到 app 上，默认开启
@@ -62,6 +63,13 @@ module.exports = appInfo => {
 		}
 	};
 
+	//扩展上传文件的配置，否则会返回400
+	config.multipart = {
+		fileExtensions: [
+			'.xlsx',
+		],
+	};
+
 
 
 
@@ -74,14 +82,6 @@ module.exports = appInfo => {
 	// };
 
 
-
-
-	//扩展上传文件的配置，否则会返回400
-	config.multipart = {
-		fileExtensions: [
-			'.xlsx',
-		],
-	};
 
 
 

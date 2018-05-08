@@ -9,13 +9,16 @@ module.exports = app => {
 	//--------------------小程序访问的接口
 
 	router.post('/user', controller.home.user);
-	router.post('/jobList', controller.job.init); //工作列表
-	router.post('/jobDetailed', controller.job.jobDetailed); //工作详细
-	// router.post('/jobList', controller.news.init); //新闻列表
-	// router.post('/jobDetailed', controller.news.jobDetailed); //新闻详细
+	// router.post('/jobList', controller.job.init); //工作列表
+	// router.post('/jobDetailed', controller.job.jobDetailed); //工作详细
+	router.post('/jobList', controller.news.init); //新闻列表
+	router.post('/jobDetailed', controller.news.jobDetailed); //新闻详细
 	router.post('/addFavor',controller.favorite.addFavor); //收藏
 	router.get('/queryFavors', controller.favorite.queryFavors); //查询收藏
 	router.post('/deleteFavor', controller.favorite.deleteFavor); //收藏
+
+
+
 
 
 

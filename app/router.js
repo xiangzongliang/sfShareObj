@@ -5,7 +5,7 @@
  */
 module.exports = app => {
 	const {router, controller} = app;
-	const islogin = app.middleware.islogin();
+	const islogin = app.middleware.islogin;
 	//--------------------小程序访问的接口
 
 	router.post('/user', controller.home.user);

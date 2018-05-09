@@ -5,7 +5,7 @@
  */
 module.exports = app => {
 	const {router, controller} = app;
-	const islogin = app.middleware.islogin();
+	const islogin = app.middleware.islogin;
 	//--------------------小程序访问的接口
 
 	router.post('/user', controller.home.user);
@@ -16,9 +16,7 @@ module.exports = app => {
 	router.post('/addFavor',controller.favorite.addFavor); //收藏
 	router.get('/queryFavors', controller.favorite.queryFavors); //查询收藏
 	router.post('/deleteFavor', controller.favorite.deleteFavor); //收藏
-
-
-
+	router.post('/sfvrList', controller.favorite.sfvrList); //SFVR列表
 
 
 

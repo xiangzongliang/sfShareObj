@@ -33,6 +33,9 @@ class FavoriteController extends Controller {
 	async sfvrList() {
 		let postData = {
 			"pano": [{
+				"type": "顺丰VR",
+				"list": [{"id": 905, "title": "同城办公环境", "isNew": true}]
+			},{
 				"type": "风光",
 				"list": [{"id": 107, "title": "冰岛蓝湖地热温泉", "isNew": true}, {
 					"id": 106,
@@ -71,7 +74,7 @@ class FavoriteController extends Controller {
 				}, {"id": 301, "title": "最后的国营理发店", "isNew": false}]
 			}, {
 				"type": "其他",
-				"list": [{"id": 905, "title": "同城办公环境", "isNew": false}, {"id": 902, "title": "荒凉广袤的火星平原", "isNew": false}, {
+				"list": [{"id": 902, "title": "荒凉广袤的火星平原", "isNew": false}, {
 					"id": 901,
 					"title": "驶离地球航向深空",
 					"isNew": false
